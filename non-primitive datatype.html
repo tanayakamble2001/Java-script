@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Non Primitive Data Type</title>
+</head>
+<body>
+    <script>
+        //array
+        /* */
+        a=[1,2,3,'abc',true,false,null]
+        document.write(a,"<br>")
+
+        //accessing single value from array
+        document.write(a[3],"<br>")
+        //changing values
+        a[0]="New Value"
+        document.write(a,"<br>")
+
+
+        //object
+
+        b={name: 'tanaya',age:20,city:'Ratnagiri'}
+        document.write(b['name'],'&nbsp &nbsp',b.age,"<br>")
+        b['name']='TANAYA'
+        b.age=23
+        b.state="MH"
+        document.write(b['name'],'&nbsp &nbsp',b.age,"<br>")
+        console.log(b)
+    </script>
+</body>
+</html>
