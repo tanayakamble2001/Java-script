@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello</title>
+</head>
+<body id="b">
+    <h1 id="h1">Hello</h1>
+    
+    <script>
+        var arr=["Hii","Good Morning","Good Afternoon","Good Evening","Good Night","Tata","Bye Bye"]
+        var i=0
+        var bg=['red','orange','yellow','green','blue','blueviolet','pink']
+        var x=0
+        function Display(){
+            var a=document.getElementById('h1');
+            a.style.color='white'
+            a.innerHTML=arr[i]
+            i++
+            if(arr.length<=i){
+                i=0
+            }
+            var b=document.getElementById('b');
+            b.style.backgroundColor=bg[x]
+            x++
+            if(bg.length<=x){
+                x=0
+            }
+        }
+    </script>
+    <button onclick="Display()">Click Here</button>
+    <a href=""><button>Reset</button></a>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+</head>
+<body>
+    <script>
+        function Data(){
+            //fname=document.fm.fname.values;
+            fname=document.getElementById('fname1').value
+            age=parseInt(document.getElementById('age1').value)
+            console.log(typeof(age))
+
+            if(fname=="" || fname==null){
+                alert("First Name required")
+            }
+           if(age==" " ||age==null || age<0){
+                alert("Age also requied.... age can not be a negative")
+            }
+
+            document.getElementById('f').innerHTML=fname
+            document.getElementById('a').innerHTML=age
+        }
+    </script>
+    <h1>First Name:<span id="f"></span></h1>
+    <h1>Age:<span id="a"></span></h1>
+    <form>
+        fname:<input type="text" name="fname" id="fname1"/>
+        age:<input type="number" name="age" id="age1"/>
+    </form>
+    <input type="submit" onclick="Data()"/>
+</body>
+</html>
