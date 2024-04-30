@@ -11,24 +11,30 @@
             //fname=document.fm.fname.values;
             fname=document.getElementById('fname1').value
             age=parseInt(document.getElementById('age1').value)
+            contact=document.getElementById('contact1').value
             console.log(typeof(age))
 
             if(fname=="" || fname==null){
                 alert("First Name required")
             }
-           if(age==" " ||age==null || age<0){
+           else if(age==" " ||age==null || age<0){
                 alert("Age also requied.... age can not be a negative")
             }
-
+            else if(contact.length!=10){
+                alert("contact also required.....Contact length should be 10")
+            }
             document.getElementById('f').innerHTML=fname
             document.getElementById('a').innerHTML=age
+            document.getElementById('c').innerHTML=contact
         }
     </script>
     <h1>First Name:<span id="f"></span></h1>
     <h1>Age:<span id="a"></span></h1>
+    <h1>Contact No. :<span id="c"></span></h1>
     <form>
         fname:<input type="text" name="fname" id="fname1"/>
         age:<input type="number" name="age" id="age1"/>
+        contact:<input type="tel" name="contact" id="contact1"/>
     </form>
     <input type="submit" onclick="Data()"/>
 </body>
