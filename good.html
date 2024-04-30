@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hey</title>
+</head>
+<body id="b">
+    <h1 id="h1">HELLO</h1>
+    <script>
+        bgc=['red','violet','yellow','green','blue']
+        textc=['blue','pink','red','yellow','magenta']
+        enter=['Hii...','Good Morning','Good Afternoon','Good Evening','Good Night']
+        i=0
+        function Display(){
+            a=document.getElementById('b')
+            a.style.backgroundColor=bgc[i]
+            a.style.color=textc[i]
+            document.getElementById('h1').innerHTML=enter[i]
+            i++
+            if(textc.length<=i){
+                i=0
+            }
+        }
+    </script>
+    <button onclick="Display()">Click</button>
+    <a href=""><button>Refresh</button></a>
+</body>
+</html>

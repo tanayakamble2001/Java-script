@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button Validation</title>
+ 
+</head>
+<body>
+    <script>
+        
+        function over(){
+            fname=document.getElementById('fname1').value
+            age=document.getElementById('age1').value
+
+            btn=document.getElementById('btn')
+            if(fname == "" || fname == null || age == "" || age == null){
+                btn.style.float="right"
+            }
+            else{
+                btn.style.float="left"
+            }
+        }
+        function out(){
+            btn.style.float="left"
+        }
+    </script>
+    <form>
+        Fname:<input type="text" name="fname" id="fname1"/>
+        Age:<input type="number" name="age" id="age1"/>
+        <br> <br>
+    </form>
+    <input type="submit" onmouseover="over()"  onmouseout="out()" id="btn" />
+</body>
+</html>
