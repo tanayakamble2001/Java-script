@@ -27,6 +27,13 @@
             document.getElementById('a').innerHTML=age
             document.getElementById('c').innerHTML=contact
         }
+        function Contact(){
+            contact=document.getElementById('contact1').value
+            //document.getElementById('c').innerHTML=contact
+            if(contact.length>10){
+                alert("You Can not enter number more than 10")
+            }
+        }
     </script>
     <h1>First Name:<span id="f"></span></h1>
     <h1>Age:<span id="a"></span></h1>
@@ -34,7 +41,7 @@
     <form>
         fname:<input type="text" name="fname" id="fname1"/>
         age:<input type="number" name="age" id="age1"/>
-        contact:<input type="tel" name="contact" id="contact1"/>
+        contact:<input type="number" name="contact" id="contact1" oninput="Contact()"/>
     </form>
     <input type="submit" onclick="Data()"/>
 </body>
