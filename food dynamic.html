@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Dynamic</title>
+    <style>
+        table,th,td{
+            border: 2px solid black;
+            border-collapse: collapse;
+            text-align: center;
+        }
+        table{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="FoodList('veg')">Veg</button>
+    <button onclick="FoodList('non-veg')">Non-Veg</button>
+    <table width="465px" id="tb">
+        <tr>
+            <th>Sr. No.</th>
+            <th>Food_Name</th>
+            <th>Quantity_Full_Price</th>
+            <th>Quantity_Half_Price</th>
+            <th>Image</th>
+        </tr>
+        <tbody id="fooddata">
+
+        </tbody>
+    </table>
+    <table width="465px" id="tb2">
+        <tr>
+            <th>Sr. No.</th>
+            <th>Food_Name</th>
+            <th>Quantity_Full_Price</th>
+            <th>Quantity_Half_Price</th>
+            <th>Image</th>
+        </tr>
+        <tbody id="foodnonveg">
+
+        </tbody>
+    </table>
+    <script>
+        food=""
+        data=""
+        function FoodList(type){
+            dataveg=[[1,"Palak Paneer",200,150,"pic/whatsapplogo.png"],[2,"Veg Kolhapuri",250,140,"pic/whatsapplogo.png"]]
+
+            datanonveg=[[1,"Chicken Tikka",500,300,"pic/whatsapplogo.png"],[2,"Chicken 65",400,200,"pic/whatsapplogo.png"]]
+            if(type=='veg'){
+                for(i=0;i<dataveg.length;i++){
+                    food+="<tr>"
+                        for(j=0;j<dataveg[i].length;j++){
+                            //console.log(dataveg[i][j])
+                            if(j==4){
+                                food+=`<td><img src='${dataveg[i][j]}' width='50px' height='50px'/></td>`                            }
+                            else{
+                                food+=`<td>${dataveg[i][j]}</td>`
+                            }
+                        }
+                        food+="</tr>"
+                        //console.log(food)
+                }
+                document.getElementById('fooddata').innerHTML=food
+                document.getElementById('tb').style.display='block'
+            }
+            else if(type=='non-veg'){
+                for(i=0;i<datanonveg.length;i++){
+                    data+="<tr>"
+                        for(j=0;j<datanonveg[i].length;j++){
+                            if(j==4){
+                                data+=`<td><img src='${datanonveg[i][j]}' width='50px' height='50px'/></td>`
+                            }
+                            else{
+                                data+=`<td>${datanonveg[i][j]}</td>`
+                            }
+                        }
+                    data+='</tr>'
+                }
+                document.getElementById('foodnonveg').innerHTML=data
+                document.getElementById('tb2').style.display='block'
+            }
+        }
+    </script>
+</body>
+</html>
