@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cars</title>
+    <style>
+        table,th,td{
+            border: 2px solid black;
+            border-collapse: collapse;
+            text-align: center;
+            width: 700px;
+        }
+        table{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="CarsList('maruti')">Maruti cars</button>
+    <button onclick="CarsList('hyundai')">Hyundai cars</button>
+    <button onclick="CarsList('skoda')">Skoda cars</button>
+    <button>Mahindra cars</button>
+    <button>Honda cars</button>
+    <table id="tb">
+        <tr>
+            <th>Sr. No.</th>
+            <th>Model</th>
+            <th>Price</th>
+            <th>Image</th>
+        </tr>
+        <tbody id="cardata">
+
+        </tbody>
+    </table>
+    <script>
+        maruti=""
+        hyundai=""
+        skoda=""
+        mahindra=""
+        honda=""
+        function CarsList(type){
+            datamaruti=[[1,'Maruti Wagon R','5.55 - 7.38 Lakh','pic/wagon-r.webp'],[2,'Maruti Brezza','8.34 - 14.14 Lakh','pic/maruti-brezza.jpg'],[3,'Maruti Swift',' 6.24 - 9.28 Lakh','pic/maruti-swift.webp']]
+            datahyundai=[[1,'Hyundai Exter','6.94 - 11.91 Lakh','pic/hyundai-exter.avif'],[2,'Hyundai Verna','12.97 - 20.63 Lakh','pic/hyundai-verna.avif'],[3,'Hyundai Tucson','34.42 - 43.35 Lakh','pic/hyundai-tucson.avif']]
+            dataskoda=[[1,'Skoda Slavia',' 13.59 - 22.66 Lakh','pic/skoda-slavia.avif'],[2,'Skoda Kodiaq','45.67 - 47.43 Lakh','pic/skoda-kodiaq.avif'],[3,'Skoda Enyaq iV','35.00 - 40.00Lakh','pic/skoda-enyaq-iv.avif']]
+            if(type=='maruti'){
+                for(i=0;i<datamaruti.length;i++){
+                    maruti+="<tr>"
+                        for(j=0;j<datamaruti[i].length;j++){
+                            if(j==3){
+                                maruti+=`<td><img src='${datamaruti[i][j]}' width='50px' height='50px' /> </td>`
+                            }
+                            else{
+                                maruti+=`<td>${datamaruti[i][j]}</td>`
+                            }
+                        }
+                    maruti+="</tr>"
+                }
+                document.getElementById('cardata').innerHTML=maruti
+                document.getElementById('tb').style.display='block'
+            }
+            else if(type=='hyundai'){
+                for(i=0;i<datahyundai.length;i++){
+                    hyundai+="<tr>"
+                        for(j=0;j<datahyundai[i].length;j++){
+                            if(j==3){
+                                hyundai+=`<td><img src='${datahyundai[i][j]}' width='50px' height='50px'/></td>`
+                            }
+                            else{
+                                hyundai+=`<td>${datahyundai[i][j]}</td>`
+                            }
+                        }
+                        hyundai+="</tr>"
+                }
+                document.getElementById('cardata').innerHTML=hyundai
+                document.getElementById('tb').style.display='block'
+            }
+        }
+    </script>
+</body>
+</html>
