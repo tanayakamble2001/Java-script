@@ -75,6 +75,22 @@
                 document.getElementById('cardata').innerHTML=hyundai
                 document.getElementById('tb').style.display='block'
             }
+            else if(type=='skoda'){
+                for(i=0;i<dataskoda.length;i++){
+                    skoda+="<tr>"
+                        for(j=0;j<dataskoda[i].length;j++){
+                            if(j==3){
+                                skoda+=`<td><img src='${dataskoda[i][j]}' width='50px' height='50px'/></td>`
+                            }
+                            else{
+                                skoda+=`<td>${dataskoda[i][j]}</td>`
+                            }
+                        }
+                        skoda+="</tr>"
+                }
+                document.getElementById('cardata').innerHTML=skoda
+                document.getElementById('tb').style.display='block'
+            }
         }
     </script>
 </body>
