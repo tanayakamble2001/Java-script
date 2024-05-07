@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vote</title>
+</head>
+<body>
+    <form>
+        Age:<input type="number" name="age" id="age1"/>
+        Nationality:<input type="text" name="national" id="national1" />
+    </form>
+    <input type="submit" onclick="Vote()"/>
+    <script>
+        function Vote(){
+            age=document.getElementById('age1').value
+            national=document.getElementById('national1').value
+            if(age>=18 && national=='Indian'){
+                alert("You are eligible to cast the vote")
+            }
+           else{
+             alert("You are eligible to cast the vote")
+           }
+        }
+    </script>
+</body>
+</html>
