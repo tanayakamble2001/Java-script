@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Armstrong Number</title>
+</head>
+<body>
+    <form>
+        num=<input type="number" name="num" id="num1"/>
+    </form>
+    <script>
+        temp=document.getElementById('num1').value
+        function armst(){
+            while(temp>0){
+            rem=temp%10
+            sum+=r**4
+            temp=temp/10
+            }
+            if(sum==num){
+                document.write(`${num} is armstrong Number`)
+            }
+            else{
+                document.write(`${num} is not armstrong Number`)
+            }
+            
+        }
+    </script>
+    <input type="submit" onclick="armst()"/>
+</body>
+</html>
