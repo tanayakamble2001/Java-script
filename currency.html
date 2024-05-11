@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Converter</title>
+    <style>
+        body{
+            background-color: darkgrey;
+        }
+        .currency{
+            border: 2px solid black;
+            width: 40%;
+            height: 350px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        function Converter(){
+            from=document.fm.from.value;
+            to=document.fm.to.value;
+            amt=parseFloat(document.fm.amt.value);
+            fetch(`https://api.exchangerate-api.com/v4/latest/${from}`)
+            .then(re=>re.json())
+            .then(data=>{
+                console.log(data['rates'][to])
+                camount=data['rates'][to]
+                document.getElementById('h1').innerHTML= camount*amt;
+            })
+        }
+    </script>
+    <div class="currency">
+        <form name="fm">
+            <table>
+                <tr>
+                    <th colspan="2">Currency Converter</th>
+                </tr>
+                <tr>
+                    <td>From:</td>
+                    <td>
+                        <select name="from">
+                            <option value="INR">Indian Rupees</option>
+                            <option value="USD">American Dollars</option>
+                            <option value="QAR">Qatar Riyal</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>To:</td>
+                    <td>
+                        <select name="to">
+                            <option value="INR">Indian Rupees</option>
+                            <option value="USD">American Dollars</option>
+                            <option value="QAR">Qatar Riyal</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Amount:</td>
+                    <td>
+                        <input type="number" placeholder="Enter Amount" name="amt"/>
+                    </td>
+                </tr>
+            </table>
+        </form>
+        <input type="submit" value="Convert" onclick="Converter()"/>
+        <h1>Converted Amount: <span id="h1"></span></h1>
+    </div>
+    
+</body>
+</html>
