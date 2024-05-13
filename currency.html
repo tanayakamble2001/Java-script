@@ -9,12 +9,26 @@
             background-color: darkgrey;
         }
         .currency{
+            background-color: white;
             border: 2px solid black;
+            text-align: center;
             width: 40%;
             height: 350px;
             margin-left: auto;
             margin-right: auto;
-            margin-top: 50px;
+            margin-top: 50px; 
+            line-height: 30px;   
+        }
+        table{
+            text-align: justify;
+            margin-left: 150px;
+        }
+        .btn{
+            width: 25%;
+            height: 30px;
+            background-color: darkgray;
+            color: white;
+            font-size: 16px;
         }
     </style>
 </head>
@@ -34,11 +48,9 @@
         }
     </script>
     <div class="currency">
+        <h2>Currency Converter</h2>
         <form name="fm">
             <table>
-                <tr>
-                    <th colspan="2">Currency Converter</th>
-                </tr>
                 <tr>
                     <td>From:</td>
                     <td>
@@ -46,6 +58,7 @@
                             <option value="INR">Indian Rupees</option>
                             <option value="USD">American Dollars</option>
                             <option value="QAR">Qatar Riyal</option>
+                            <option value="EUR"> Euro</option>
                         </select>
                     </td>
                 </tr>
@@ -56,6 +69,7 @@
                             <option value="INR">Indian Rupees</option>
                             <option value="USD">American Dollars</option>
                             <option value="QAR">Qatar Riyal</option>
+                            <option value="EUR"> Euro</option>
                         </select>
                     </td>
                 </tr>
@@ -67,7 +81,7 @@
                 </tr>
             </table>
         </form>
-        <input type="submit" value="Convert" onclick="Converter()"/>
+        <input type="submit" value="Convert" onclick="Converter()" class="btn"/>
         <h1>Converted Amount: <span id="h1"></span></h1>
     </div>
     
